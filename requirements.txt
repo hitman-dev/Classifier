@@ -1,0 +1,9 @@
+click<=8.0.4
+Pillow
+pickle5
+keras
+tensorflow
+streamlit==1.8.0
+numpy==1.18.5
+numba ==0.54.1
+llvmlite==0.37.0
