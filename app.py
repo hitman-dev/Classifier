@@ -78,7 +78,7 @@ if choice == "Monkey Species":
         with col:
             name = df["Common Name"].iloc[counter]
             st.text(name)
-            path = f"C:/Users/Siddhant/PycharmProjects/Projects/Classifier/Monkey/monkey images/{name}.jpg"
+            path = f"Monkey/monkey images/{name}.jpg"
             image = Image.open(path)
             st.image(image)
             with st.expander("Details"):
@@ -92,7 +92,7 @@ if choice == "Monkey Species":
         with col:
             name = df["Common Name"].iloc[counter]
             st.text(name)
-            path = f"C:/Users/Siddhant/PycharmProjects/Projects/Classifier/Monkey/monkey images/{name}.jpg"
+            path = f"Monkey/monkey images/{name}.jpg"
             image = Image.open(path)
             st.image(image)
             with st.expander("Details"):
