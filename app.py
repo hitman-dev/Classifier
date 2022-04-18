@@ -64,7 +64,7 @@ with open('Monkey/models/monkey_model.pkl' , 'rb') as f:
     monkey_model = pickle.load(f)
 
 
-menu = ["Monkey Species", "Clean Room or Messy Room", "Fruits", "About"]
+menu = ["Monkey Species", "Clean Room or Messy Room", "About"]
 choice = st.sidebar.selectbox("Menu", menu)
 
 if choice == "Monkey Species":
