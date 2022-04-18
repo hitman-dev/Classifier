@@ -3,11 +3,11 @@ from PIL import Image
 import pandas as pd
 import numpy as np
 import tensorflow as tf
-from PIL import Image
+import pickle
 from keras.preprocessing import image
 from keras.applications.xception import preprocess_input
 
-# streamlit run C:/Users/Siddhant/PycharmProjects/Projects/Classifier/app.py --server.address=127.0.0.1
+# streamlit run app.py --server.address=127.0.0.1
 
 st.set_page_config(layout="wide")
 
@@ -47,7 +47,7 @@ def classify_room(img):
 
 
 df = pd.read_csv(
-    "C:/Users/Siddhant/PycharmProjects/Projects/Classifier/Monkey/monkey_labels.txt"
+    "Monkey/monkey_labels.txt"
 )
 
 
@@ -57,12 +57,12 @@ def load_ml_model(path):
 
 
 room_model = load_ml_model(
-    "C:/Users/Siddhant/PycharmProjects/Projects/Classifier/CleanRoom_MessyRoom/clean-messy_model"
+    "CleanRoom_MessyRoom/clean-messy_model"
 )
 
-monkey_model = load_ml_model(
-    "C:/Users/Siddhant/PycharmProjects/Projects/Classifier/Monkey/models"
-)
+with open('Monkey/models/monkey_model.pkl' , 'rb') as f:
+    monkey_model = pickle.load(f)
+
 
 menu = ["Monkey Species", "Clean Room or Messy Room", "Fruits", "About"]
 choice = st.sidebar.selectbox("Menu", menu)
